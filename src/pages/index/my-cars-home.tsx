@@ -1,12 +1,17 @@
 import React from "react";
 import { FC } from "react";
-import { Box, Icon, Text } from "zmp-ui";
+import { Box, Icon, Text, useNavigate } from "zmp-ui";
 import myCarImg from "../../../assets/images/my_car.png";
 import myCarImg2 from "../../../assets/images/check_option.png";
 
 export const MyCarsHome: FC = () => {
+  const navigate = useNavigate();
+
+  const toMyCars = () => {
+    navigate('/my-cars');
+  };
   return (
-    <Box className="bg-main-2 grid grid-cols-2 gap-2 mt-4 p-8 box-shadow-bold rounded-lg">
+    <Box className="bg-main-2 grid grid-cols-2 gap-2 mt-4 p-8 box-shadow-bold rounded-lg" onClick={() => navigate('/my-cars')}>
       <div>
         <img className="w-full h-40 rounded-lg" src={myCarImg} />
         <div className="flex items-center justify-center py-2">
